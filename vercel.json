@@ -17,4 +17,4 @@
     { "src": "/api/view-product/(.*)", "dest": "server/api/viewProduct.js" },
     { "src": "/(.*)", "dest": "client/dist/index.html" }
   ]
-}
+} 
