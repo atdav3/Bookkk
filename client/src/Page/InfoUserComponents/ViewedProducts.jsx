@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { requestGetViewProduct } from '../../config/request';
 
-import CardBody from '../../Components/CardBody/CardBody';
+import Cardbody from "../../Components/Cardbody/Cardbody";
 
 const ViewedProducts = () => {
     const [viewedProducts, setViewedProducts] = useState([]);
@@ -27,7 +27,7 @@ const ViewedProducts = () => {
             ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {viewedProducts.map((product) => (
-                        <CardBody product={product.product} />
+                        <Cardbody product={product.product} />
                         // <div
                         //     key={product._id}
                         //     className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
