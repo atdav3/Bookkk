@@ -1,0 +1,29 @@
+{
+  "projects": [
+    {
+      "src": "client",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "client/dist"
+      }
+    },
+    {
+      "src": "server",
+      "use": "@vercel/node"
+    }
+  ],
+  "builds": [
+    { "src": "client/package.json", "use": "@vercel/static-build" },
+    { "src": "server/src/server.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/users/(.*)", "dest": "server/api/users.js" },
+    { "src": "/api/category/(.*)", "dest": "server/api/category.js" },
+    { "src": "/api/product/(.*)", "dest": "server/api/product.js" },
+    { "src": "/api/cart/(.*)", "dest": "server/api/cart.js" },
+    { "src": "/api/payments/(.*)", "dest": "server/api/payments.js" },
+    { "src": "/api/view-product/(.*)", "dest": "server/api/viewProduct.js" },
+    { "src": "/api/(.*)", "dest": "server/src/server.js" },
+    { "src": "/(.*)", "dest": "client/dist/$1" }
+  ]
+} 
